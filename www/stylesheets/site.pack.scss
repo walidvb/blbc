@@ -1,0 +1,96 @@
+@import 'base';
+
+.menu a{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+.menu{
+  padding-right: 2rem;
+  padding-left: 20vw;
+}
+
+@media (min-width:767px){
+  .menu{
+    padding-top: 20vh;
+    width: 50%;
+    height: 100vh;
+  }
+  .wrapper{
+    height: 100vh;
+    position: absolute;
+    left: 50vw;
+    right: 20vw;
+    top: 0;
+    overflow: auto;
+    padding-right: 1rem;
+  }
+}
+.artist-name{
+  line-height: 2.583333333333333rem;
+  font-size: 2.25rem;
+  text-decoration: none;
+  padding: .5rem 0;
+  margin-bottom: .5rem;
+  display: inline-block;
+  border-bottom: solid 1px transparent;
+  text-transform: uppercase;
+}
+
+.menu:hover .artist-name{
+  opacity: .3;
+}
+
+.menu .artist-name:hover, .artist-wrapper:target .artist-name{
+  opacity: 1;
+  border-bottom: solid 3px white;
+}
+
+
+.photo{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate3D(-50%, -50%, 0);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bio{
+  padding-top: 40vh;
+}
+
+.photo img, .bio, .menu:hover .photo img {
+  display: none;
+  transition: all .6s ease-out;
+  max-height: 80vh;
+}
+.menu:hover .artist-wrapper:hover .photo img, .artist-wrapper:target .photo img{
+  display: inline-block;
+}
+
+.artist-wrapper:target .photo img{
+  opacity: .6;
+  transform: scale(.9);
+}
+.artist-wrapper:target .bio{
+  display: inline-block;
+}
+
+.fade-up{
+  animation: fade-up 1 .8s;
+}
+
+
+@keyframes fade-up{
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

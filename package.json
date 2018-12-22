@@ -1,0 +1,11 @@
+{
+  "name": "blbc",
+  "vapid": {
+  },
+  "scripts": {
+    "start": "vapid start ."
+  },
+  "dependencies": {
+    "vapid-cli": "^0.3.5"
+  }
+}
