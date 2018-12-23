@@ -23,6 +23,7 @@ html{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 @media (min-width:767px){
@@ -52,4 +53,18 @@ ul{
   -webkit-margin-start: 0;
   padding-inline-start: 0;
 
+}
+
+
+.visible-xs{
+  display: none;
+}
+
+@media (max-width:767px){
+  .hidden-xs{
+    display: none;
+  }
+  .visible-xs{
+    display: inline-block;
+  }
 }

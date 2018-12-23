@@ -12,58 +12,10 @@
   padding-top: 1rem;
 }
 
-@media (min-width:767px){
-  .slogan{
-    position: absolute;
-    right: 1rem;
-    z-index: 100;
-  }
-  .menu{
-    padding-top: 20vh;
-    padding-left: 5vw;
-    padding-right: 0;
-    width: 50%;
-    height: 100vh;
-    overflow-y: auto;
-  }
-  .bio{
-    height: 100vh;
-    position: absolute;
-    left: 55vw;
-    right: 0;
-    padding-right: 5vw;
-    padding-top: 40vh;
-    top: 0;
-    overflow-y: auto;
-  }
-
-  .bio-content{
-    display: flex;
-    margin-top: 1rem;
-  }
-  .social{
-    flex-direction: column;
-  }
-
-  .ul-wrapper:hover .artist-name{
-    opacity: .3;
-  }
-}
-
-@media (min-width:991px){
-  .menu{
-    padding-left: 15vw;
-  }
-  .bio{
-    padding-right: 10vw;
-    padding-left: 2rem;
-  }
-}
 .slogan{
   font-family: 'Old Standard TT', serif;
   font-size: 1rem;
   margin-top: 1rem;
-  text-align: right;
   color: white;
 }
 h1{
@@ -99,7 +51,6 @@ h1{
 
 
 .artist-wrapper:target .artist-name, .name-wrapper:hover .artist-name{
-  opacity: 1;
   z-index: 1;
   position: relative;
 }
@@ -135,9 +86,11 @@ h1{
 
 
 /* HOVER STYLES */
+.name-wrapper:hover{
+  color: white!important;
+}
 .menu .name-wrapper:hover .artist-name{
   z-index: 3;
-  opacity: 1;
   border-bottom: solid 3px white;
 }
 .menu .name-wrapper:hover .performance-type{
@@ -160,8 +113,12 @@ h1{
   z-index: 3;
 }
 /* TARGET STYLES */
+.artist-wrapper:target .name-wrapper{
+  color: white!important;
+}
 .artist-wrapper:target .artist-name{
   z-index: 1;
+  color: inherit;
   border-bottom: solid 3px white;
 }
 .artist-wrapper:target .performance-type{
@@ -207,3 +164,69 @@ h1{
   transform: scale(1.2);
 }
 
+@media (max-width:767px){
+  .slogan{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  .slogan h1{
+    margin-bottom: 2rem;
+  }
+  .slogan a{
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media (min-width:767px){
+  .slogan{
+    position: absolute;
+    right: 1rem;
+    z-index: 100;
+    text-align: right;
+  }
+  .menu{
+    padding-top: 20vh;
+    padding-left: 5vw;
+    padding-right: 0;
+    width: 50%;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .bio{
+    height: 100vh;
+    position: absolute;
+    left: 55vw;
+    right: 0;
+    padding-right: 5vw;
+    padding-top: 40vh;
+    top: 0;
+    overflow-y: auto;
+  }
+
+  .bio-content{
+    display: flex;
+    margin-top: 1rem;
+  }
+  .social{
+    flex-direction: column;
+  }
+
+  .ul-wrapper:hover .name-wrapper{
+    color: darken(white, 90%);
+  }
+}
+
+@media (min-width:991px){
+  .menu{
+    padding-left: 15vw;
+  }
+  .bio{
+    padding-right: 10vw;
+    padding-left: 2rem;
+  }
+}

@@ -11,14 +11,17 @@
     <meta property="og:image" content="{{social_image type=image tag=false}}">
     <meta property="og:url" content="{{social_url}}">
   {{/section}}
-  <link href="https://fonts.googleapis.com/css?family=Monoton|Work+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Monoton:400,800|Work+Sans:400,800" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/stylesheets/site.css">
 </head>
 <body>
   {{#section general}}
     <div class="slogan">
-      <h1>{{slogan}}</h1>
-      <a href="mailto:{{contact}}">contact</a>
+      <div>
+        <div class="hidden-xs">{{slogan}}</div>
+        <div class="visible-xs">{{slogan_mobile type=html}}</div>
+        <a href="mailto:{{contact}}">contact us</a>
+      </div>
     </div>
   {{/section}}
   <div class="menu">
