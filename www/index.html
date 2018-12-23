@@ -18,23 +18,22 @@
               <img class="fade-up" src="{{photo type=image tag=false}}" />
             </div>
             <div class="bio fade-up">
-              {{media_embed type=html editor=false}}
+              <ul class="social">
+                {{#if website}}<li><a href="{{website required=false}}" target="_blank">website</a></li>{{/if}}
+                {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank">facebook</a></li>{{/if}}
+                {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank">soundcloud</a></li>{{/if}}
+                {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank">twitter</a></li>{{/if}}
+                {{#if ra}}<li><a href="{{ra required=false}}" target="_blank">ra</a></li>{{/if}}
+                {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank">mixcloud</a></li>{{/if}}
+                {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank">instagram</a></li>{{/if}}
+              </ul>
+              {{media_embed type=html editor=false required=false}}
               {{biography type=html}}
 
-              <ul>
-                {{#if website}}<li><a href="{{website}}" target="_blank">website</a></li>{{/if}}
-                {{#if facebook}}<li><a href="{{facebook}}" target="_blank">facebook</a></li>{{/if}}
-                {{#if soundcloud}}<li><a href="{{soundcloud}}" target="_blank">soundcloud</a></li>{{/if}}
-                {{#if twitter}}<li><a href="{{twitter}}" target="_blank">twitter</a></li>{{/if}}
-                {{#if ra}}<li><a href="{{ra}}" target="_blank">ra</a></li>{{/if}}
-                {{#if mixcloud}}<li><a href="{{mixcloud}}" target="_blank">mixcloud</a></li>{{/if}}
-                {{#if instagram}}<li><a href="{{instagram}}" target="_blank">instagram</a></li>{{/if}}
-              </ul>
             </div>
           </div>
         </li>
       {{/sections}}
-      <li><a href="#not-fx" class="artist-name">Not FX</a></li>
     </ul>
   </div>
 
