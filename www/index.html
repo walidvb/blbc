@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vapid Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{#section meta}}
+    <title>{{page_title}}</title>
+    <meta property="og:title" content="{{page_title}}">
+    <meta property="og:site_name" content="{{page_title}}">
+    <meta property="og:description" content="{{social_description}}">
+    <meta property="og:image" content="{{social_image type=image tag=false}}">
+    <meta property="og:url" content="{{social_url}}">
+  {{/section}}
   <link href="https://fonts.googleapis.com/css?family=Monoton|Work+Sans:400,800" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/stylesheets/site.css">
 </head>
@@ -16,9 +23,9 @@
   {{/section}}
   <div class="menu">
     <ul class="ul-wrapper">
-      {{#sections artists multiple=true}}
-        <li class="artist-wrapper" id="{{slug}}">
-          <a href="#{{slug}}" class="name-wrapper">
+      {{#sections artists multiple=true sort=true}}
+        <li class="artist-wrapper" id="{{slug placeholder='do not use spaces or special characters'}}">
+          <a href="/#{{slug}}" class="name-wrapper">
             <h2 class="artist-name">{{name}}</h2>
             <sub class="performance-type">{{performance_type}}</sub>
           </a>
@@ -26,9 +33,6 @@
             {{photo width=1000 type=image}}
           </div>
           <div class="bio fade-up">
-            <!-- <div class="booker">
-              <span>Booker:</span> <a href="mailto:{{agent}}">{{agent}}</a>
-            </div> -->
             <div class="bio-content">
               <ul class="social">
                 {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-residentadvisor" title="homepage">&nbsp;</a></li>{{/if}}
