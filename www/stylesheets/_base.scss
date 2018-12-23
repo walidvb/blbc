@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Thasadith:400,400i,700');
+
 *{
   box-sizing: border-box;
-  line-height: 1.42;
 }
 
 img{
@@ -9,15 +10,21 @@ img{
 }
 
 html{
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.625rem;
   background-color: #111;
   background-image: url('/images/background.jpg');
   background-size: cover;
 }
+@media (min-width:767px){
+  html{
+    font-size: 24px;
+  }
+}
 body{
   background: rgba(0,0,0,.6);
   color: white;
-  font-family: Arial;
+  font-family: 'Thasadith', sans-serif;
   margin: 0;
   padding: 0 15px;
 }
