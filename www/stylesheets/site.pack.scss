@@ -1,49 +1,91 @@
 @import 'base';
 
 .fade-up{
-  animation: fade-up 1 0s forwards;
+  animation: fade-up 1 .5s forwards;
 }
 
 .menu{
   padding-right: 2rem;
 }
 
+.bio{
+  padding-top: 1rem;
+}
+
 @media (min-width:767px){
+  .slogan{
+    position: absolute;
+    right: .5rem;
+  }
   .menu{
     padding-top: 20vh;
     padding-left: 15vw;
+    padding-right: 0;
     width: 50%;
     height: 100vh;
-    overflow: auto;
+    overflow-y: auto;
   }
   .bio{
     height: 100vh;
     position: absolute;
-    left: 50vw;
+    left: 55vw;
     right: 0;
-    padding-right: 15vw;
+    padding-right: 10vw;
     padding-top: 40vh;
+    padding-left: 2rem;
     top: 0;
-    overflow: auto;
+    overflow-y: auto;
+  }
+
+  .bio-content{
+    display: flex;
+    margin-top: 1rem;
+  }
+  .social{
+    flex-direction: column;
   }
 }
 
+.slogan{
+  font-family: 'Old Standard TT', serif;
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: normal;
+}
+h1{
+  font-size: inherit;
+  margin: 0;
+}
+.name-wrapper{
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+}
 .artist-name{
   line-height: 2.583333333333333rem;
-  font-size: 2.25rem;
+  font-size: 1.8rem;
   text-decoration: none;
-  padding: 1.3333rem 0 .33333rem;
+  padding: 1rem 0 .2rem;
   display: inline-block;
   border-bottom: solid 3px transparent;
   text-transform: uppercase;
   font-family: 'Old Standard TT', serif;
+  text-decoration: none;
 }
 
-.menu:hover .artist-name{
+.performance-type{
+  vertical-align: top;
+  display: none;
+  position: relative;
+  top: .3rem;
+  z-index: 1;
+}
+
+.ul-wrapper:hover .artist-name{
   opacity: .3;
 }
 
-.artist-wrapper:target .artist-name, .artist-name:hover{
+.artist-wrapper:target .artist-name, .name-wrapper:hover .artist-name{
   opacity: 1;
   z-index: 1;
   position: relative;
@@ -71,6 +113,10 @@
   opacity: 0;
   animation-delay: .2s;
 }
+
+.booker{
+}
+
 /* HIDDEN STYLES */
 .photo, .bio{
   display: none;
@@ -79,10 +125,14 @@
 
 
 /* HOVER STYLES */
-.menu .artist-name:hover{
+.menu .name-wrapper:hover .artist-name{
   z-index: 3;
   opacity: 1;
   border-bottom: solid 3px white;
+}
+.menu .name-wrapper:hover .performance-type{
+  display: inline-block;
+  z-index: 3;
 }
 
 .menu:hover .artist-wrapper:hover:not(:target) .photo{
@@ -90,18 +140,26 @@
   z-index: 2;
 }
 
+.menu:hover .artist-wrapper:hover:not(:target) .performance-type{
+  z-index: 3;
+}
 /* TARGET STYLES */
 .artist-wrapper:target .artist-name{
   z-index: 1;
+  border-bottom: solid 3px white;
+}
+.artist-wrapper:target .performance-type{
+  display: inline-block;
 }
 .artist-wrapper:target .photo{
   display: flex;
-  z-index: -1;
+  z-index: 0;
 }
 .artist-wrapper:target .photo img{
   display: inline-block;
-  opacity: .6;
+  opacity: .4;
   transform: scale(.9);
+  background: #111;
 }
 .artist-wrapper:target .bio{
   display: inline-block;
@@ -111,7 +169,7 @@
 
 @keyframes fade-up{
   from{
-    opacity: 0;
+    opacity: .7;
     transform: translateY(5px);
   }
   to{
@@ -122,6 +180,10 @@
 
 .social{
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
 }
+.social li a{
+  padding: .5rem .5rem;
+  display: inline-block;
+  text-decoration: none;
+}
+

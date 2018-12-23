@@ -8,26 +8,42 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/site.css">
 </head>
 <body>
+  {{#section general}}
+    <div class="slogan">
+      <h1>{{slogan}}</h1>
+      <a href="mailto:{{contact}}">{{contact}}</a>
+    </div>
+  {{/section}}
   <div class="menu">
-    <ul>
+    <ul class="ul-wrapper">
       {{#sections artists multiple=true}}
         <li class="artist-wrapper" id="{{slug}}">
-          <a href="#{{slug}}" class="artist-name">{{name}}</a>
+          <a href="#{{slug}}" class="name-wrapper">
+            <h2 class="artist-name">{{name}}</h2>
+            <sub class="performance-type">{{performance_type}}</sub>
+          </a>
           <div class="photo fade-up">
-            {{photo type=image}}
+            {{photo width=1000 type=image}}
           </div>
           <div class="bio fade-up">
-            <ul class="social">
-              {{#if website}}<li><a href="{{website required=false}}" target="_blank">website</a></li>{{/if}}
-              {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank">facebook</a></li>{{/if}}
-              {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank">soundcloud</a></li>{{/if}}
-              {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank">twitter</a></li>{{/if}}
-              {{#if ra}}<li><a href="{{ra required=false}}" target="_blank">ra</a></li>{{/if}}
-              {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank">mixcloud</a></li>{{/if}}
-              {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank">instagram</a></li>{{/if}}
-            </ul>
-            {{media_embed type=html editor=false required=false}}
-            {{biography type=html}}
+            <div class="booker">
+              <span>Booker:</span> <a href="mailto:{{agent}}">{{agent}}</a>
+            </div>
+            <div class="bio-content">
+              <ul class="social">
+                {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-residentadvisor" title="homepage">&nbsp;</a></li>{{/if}}
+                {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank" class="socicon-facebook" title="facebook"></a></li>{{/if}}
+                {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank" class="socicon-soundcloud"></a></li>{{/if}}
+                {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank" class="socicon-twitter"></a></li>{{/if}}
+                {{#if ra}}<li><a href="{{ra required=false}}" target="_blank" class="socicon-residentadvisor"></a></li>{{/if}}
+                {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank" class="socicon-mixcloud"></a></li>{{/if}}
+                {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank" class="socicon-instagram"></a></li>{{/if}}
+              </ul>
+              <div>
+                {{biography type=html}}
+                {{#if media_embed}}{{media_embed type=html editor=false required=false}}{{/if}}
+              </div>
+            </div>
 
           </div>
         </li>
@@ -36,5 +52,7 @@
   </div>
 
   <script src="/javascripts/site.js"></script>
+  <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
+
 </body>
 </html>
