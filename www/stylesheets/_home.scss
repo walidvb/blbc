@@ -1,0 +1,108 @@
+
+.fade-up{
+  animation: fade-up 1 .5s forwards;
+}
+
+.artists-list{
+  padding-right: 2rem;
+  padding-bottom: 4rem;
+
+}
+
+.name-wrapper{
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  color: #111;
+  padding-right: 2rem;
+}
+.artist-name{
+  line-height: 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 1rem 0 .2rem;
+  display: inline-block;
+  border-bottom: solid 3px transparent;
+  text-transform: uppercase;
+  font-family: 'Old Standard TT', serif;
+  text-decoration: none;
+}
+
+
+.photo{
+  position: fixed;
+  display: flex;
+  left: 0; top: 0; right: 0; bottom: 0;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.photo img{
+  max-height: 80vh;
+}
+
+.photo img{
+  transition: all .15s ease-out;
+}
+.bio{
+  opacity: 0;
+  animation-delay: .2s;
+}
+
+/* HIDDEN STYLES */
+.photo{
+  display: none;
+  pointer-events: none;
+}
+
+
+/* HOVER STYLES */
+
+.artist-wrapper:hover {
+  color: #111!important;
+  .photo{
+    display: flex;
+  }
+}
+.artists-list .name-wrapper:hover .artist-name{
+  z-index: 3;
+  border-bottom: solid 3px #111;
+}
+
+.artists-list{
+  padding: 0;
+  min-height: 100vh;
+}
+@media (min-width:767px){
+  .artists-list{
+    width: 100vw;
+    padding: 15vh 15vw;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .artists-list:hover .name-wrapper{
+    //color: lighten(#111, 90%);
+  }
+
+  .photo{
+    z-index: 1;
+  }
+  .artist-wrapper:hover .name-wrapper{
+    z-index: 2;
+    position: relative;
+  }
+  .artists-list:hover .artist-wrapper:not(:hover){
+    z-index: 0;
+  }
+}
+
+@media (min-width:991px){
+  .artists-list{
+    padding: 20vh 20vw;
+  }
+}

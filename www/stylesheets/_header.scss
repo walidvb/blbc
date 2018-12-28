@@ -1,0 +1,60 @@
+.slogan{
+  font-family: 'Old Standard TT', serif;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #111;
+}
+
+h1{
+  font-weight: normal;
+  font-size: inherit;
+  margin: 0;
+}
+
+.logo{
+  position: fixed;
+  bottom: 1rem; right: 1rem;
+  width: 200px;
+}
+
+@media (max-width:767px){
+  .slogan{
+    .home &{
+      height: 100vh;
+    }
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+  .slogan h1{
+    margin-bottom: 2rem;
+  }
+  .slogan a{
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media (min-width:767px){
+  .slogan{
+    position: fixed;
+    right: 1rem;
+    z-index: 100;
+    text-align: right;
+  }
+}
+
+.menu-links{
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+  @media (min-width:768px){
+    display: initial;
+  }
+  a{
+    padding: 0 .5rem;
+  }
+}

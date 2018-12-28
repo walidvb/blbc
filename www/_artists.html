@@ -1,0 +1,66 @@
+<html>
+  <head>
+      {{> head}}
+      <meta property="og:title" content="{{name}}">
+      <meta property="og:description" content="{{social_description}}">
+      <meta property="og:image" content="{{photo_detail type=image width=1000 tag=false}}">
+      <meta property="og:site_name" content="{{name}}">
+      <meta property="og:description" content="{{social_description}}">
+  </head>
+{{#section artists}}
+<body>
+  {{> header}}
+  <main id="artist" class="bio fade-up">
+
+    <div class="picture">{{photo_detail type=image width=1000 }}</div>
+    <h1 class="artist-name">{{name}}</h1>
+    <div class="bio-content">
+      <div>
+        {{biography type=html}}
+        {{#if media_embed}}
+          <div class="medias">
+            {{media_embed type=html editor=false required=false}}
+          </div>
+        {{/if}}
+        <div class="call-to-action">
+          <a href="mailto:{{booker}}">BOOK {{name}} today</a>
+        </div>
+      </div>
+      <div class="links">
+        {{#if booker}}
+          <div class="label">
+            Agent
+          </div>
+          <a href="mailto:{{booker}}">{{booker placeholder="Enter booker's email"}}</a>
+        {{/if}}
+        {{#if performance_type}}
+          <div class="label">Performance Type</div>
+          {{performance_type required=false}}
+        {{/if}}
+
+        {{#if press_kit_url}}
+          <div class="press-kit">
+            <a href="{{press_kit_url placeholder="Enter dropbox or other direct link to file" required=false}}">PRESS KIT</a>
+          </div>
+        {{/if}}
+        <div class="label">
+          Social
+        </div>
+        <ul class="social">
+          {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-residentadvisor" title="homepage">&nbsp;</a></li>{{/if}}
+          {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank" class="socicon-facebook" title="facebook"></a></li>{{/if}}
+          {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank" class="socicon-soundcloud"></a></li>{{/if}}
+          {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank" class="socicon-twitter"></a></li>{{/if}}
+          {{#if ra}}<li><a href="{{ra required=false}}" target="_blank" class="socicon-residentadvisor"></a></li>{{/if}}
+          {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank" class="socicon-mixcloud"></a></li>{{/if}}
+          {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank" class="socicon-instagram"></a></li>{{/if}}
+        </ul>
+      </div>
+    </div>
+    {{#if dates_embed}} {{gigs_tool type=html editor=false required=false}}{{/if}}
+  </main>
+  {{/section}}
+  <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
+
+</body>
+</html>
