@@ -47,7 +47,7 @@
           Social
         </div>
         <ul class="social">
-          {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-residentadvisor" title="homepage">&nbsp;</a></li>{{/if}}
+          {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-internet" title="homepage">&nbsp;</a></li>{{/if}}
           {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank" class="socicon-facebook" title="facebook"></a></li>{{/if}}
           {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank" class="socicon-soundcloud"></a></li>{{/if}}
           {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank" class="socicon-twitter"></a></li>{{/if}}
@@ -57,7 +57,7 @@
         </ul>
       </div>
     </div>
-    <div data-rss="{{#if rss_feed_url}} {{rss_feed_url required=false}}"></div>{{/if}}
+    {{#if rss_feed_url}}<div data-rss="{{rss_feed_url required=false}}"></div>{{/if}}
   </main>
   {{/section}}
   <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
