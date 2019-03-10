@@ -5,14 +5,13 @@
       <meta property="og:description" content="{{social_description}}">
       <meta property="og:image" content="{{photo_detail type=image width=1000 tag=false}}">
       <meta property="og:site_name" content="{{name}}">
-      <meta property="og:description" content="{{social_description}}">
   </head>
 {{#section artists}}
 <body>
   {{> header}}
   <main id="artist" class="bio fade-up">
 
-    <div class="picture">{{photo_detail type=image width=1000 }}</div>
+    <div class="picture">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
     <h1 class="artist-name">{{name}}</h1>
     <div class="bio-content">
       <div>
@@ -50,6 +49,7 @@
           {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-internet" title="homepage">&nbsp;</a></li>{{/if}}
           {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank" class="socicon-facebook" title="facebook"></a></li>{{/if}}
           {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank" class="socicon-soundcloud"></a></li>{{/if}}
+          {{#if bandcamp}}<li><a href="{{bandcamp required=false}}" target="_blank" class="socicon-bandcamp"></a></li>{{/if}}
           {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank" class="socicon-twitter"></a></li>{{/if}}
           {{#if ra}}<li><a href="{{ra required=false}}" target="_blank" class="socicon-residentadvisor"></a></li>{{/if}}
           {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank" class="socicon-mixcloud"></a></li>{{/if}}

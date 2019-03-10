@@ -14,13 +14,13 @@
 <body class="home">
   {{> header}}
   <ul class="artists-list" id="artists">
-      {{#section artists multiple=true sort=true}}
+      {{#section artists multiple=true sortable=true}}
         <li class="artist-wrapper">
           <a href="{{_permalink}}#artist" class="name-wrapper">
             <h2 class="artist-name">{{name}}</h2>
           </a>
           <div class="photo fade-up">
-            <img src="{{photo tag=false type=image}}?w=800">
+            <img src="{{photo label="home page image" tag=false type=image}}?w=800">
           </div>
         </li>
       {{/section}}
