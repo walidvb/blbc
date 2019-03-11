@@ -71,11 +71,14 @@ $delay-short: 50;
 @for $i from 0 to $artists-count {
   .delayer:nth-child(#{$i}){
     animation-delay: #{($i - 1)*$delay}ms;
-    .out &{
-      animation-delay: #{($i - 1)*$delay-short}ms;
-    }
     .long &{
       animation-delay: #{($i - 1)*$delay-long}ms;
+    }
+    .out &{
+      animation-delay: #{($artists-count - $i)*$delay-short}ms;
+    }
+    .out.long &{
+      animation-delay: #{($artists-count - $i)*$delay-short}ms;
     }
   }
 }
