@@ -56,13 +56,12 @@
   pointer-events: none;
 }
 
-
 /* HOVER STYLES */
 
-.artist-wrapper:hover {
+body:not(.out) .artist-wrapper:hover, .clicked{
   color: #111!important;
   .photo{
-    display: flex;
+    display: flex!important;
   }
 }
 .artists-list .name-wrapper:hover .artist-name{
