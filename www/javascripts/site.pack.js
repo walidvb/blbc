@@ -16,20 +16,15 @@ visiters.forEach(node => {
     evt.preventDefault();
     document.body.classList.add('out');
 
-    const photo = node.parentNode.querySelectorAll('.photo')[0];
-    // if is a name anchor
-    if(photo){
-      node.parentNode.classList.add('clicked')
-      photo.addEventListener('animationend', () => {
-        setTimeout(()=>window.location = url, 50)
+    const fadeUps = document.querySelectorAll('.fade-up');
+    let fadedUp = 0;
+      fadeUps.forEach(elem => {
+      elem.addEventListener('animationend', () => {
+        if (++fadedUp == fadeUps.length){
+          setTimeout(() => window.location = url, 50)
+        }
       })
-    }
-    else{
-      const main = document.querySelectorAll('.fade-up')[0];
-      main.addEventListener('animationend', () => {
-        setTimeout(() => window.location = url, 50)
-      })
-    }
+    })
   }
     node.addEventListener('click', delayVisit)
   }
