@@ -16,18 +16,16 @@ $delay-short: 50;
   opacity: 0;
 }
 .up{
-  animation: up 1 .5s forwards;
+  animation-name: up; 
+  animation-iteration-count: 1;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
 }
-.out .fade-up{
+.out .fade-up, .out .up{
   animation-name: fade-up-out;
   animation-duration: .5s; 
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  opacity: 1;
-}
-
-.out .up{
-  animation: fade-up-out 1 .5s #{$artists-count*$delay}ms forwards;
   opacity: 1;
 }
 
@@ -66,6 +64,9 @@ $delay-short: 50;
 
 .fade-up{
   animation-delay: inherit;
+}
+.clicked .up{
+  animation-delay: #{($artists-count + 1)*$delay-short}ms;
 }
 @for $i from 0 to $artists-count {
   .delayer:nth-child(#{$i}){
