@@ -3,19 +3,26 @@
 @import 'home';
 @import 'artist';
 
-$artists-count: 10;
+$artists-count: 12;
 $delay: 50;
-$delay-short: 40;
+$delay-long: 200;
+$delay-short: 50;
 
 .fade-up{
-  animation: fade-up 1 .5s forwards;
+  animation-name: fade-up;
+  animation-duration: .5s; 
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   opacity: 0;
 }
 .up{
   animation: up 1 .5s forwards;
 }
 .out .fade-up{
-  animation: fade-up-out 1 .5s forwards;
+  animation-name: fade-up-out;
+  animation-duration: .5s; 
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   opacity: 1;
 }
 
@@ -57,13 +64,17 @@ $delay-short: 40;
   }
 }
 
+.fade-up{
+  animation-delay: inherit;
+}
 @for $i from 0 to $artists-count {
   .delayer:nth-child(#{$i}){
-    .fade-up.delayed{
-      animation-delay: #{$i*$delay}ms;
+    animation-delay: #{($i - 1)*$delay}ms;
+    .out &{
+      animation-delay: #{($i - 1)*$delay-short}ms;
     }
-    .out & .fade-up.delayed{
-      animation-delay: #{$i*$delay-short}ms;
+    .long &{
+      animation-delay: #{($i - 1)*$delay-long}ms;
     }
   }
 }

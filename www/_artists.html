@@ -7,60 +7,61 @@
       <meta property="og:site_name" content="{{name}}">
   </head>
 {{#section artists}}
-<body>
+<body class="long">
   {{> header}}
-  <main id="artist" class="bio fade-up">
-
-    <div class="picture">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
-    <h1 class="artist-name">{{name}}</h1>
-    <div class="bio-content">
-      <div>
-        {{biography type=html}}
-        {{#if media_embed}}
-          <div class="medias">
-            {{media_embed type=html editor=false required=false}}
+  <main id="artist" class="bio ">
+    <div class="picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
+    <div class="fade-up delayer">
+      <h1 class="artist-name">{{name}}</h1>
+      <div class="bio-content">
+        <div>
+          {{biography type=html}}
+          {{#if media_embed}}
+            <div class="medias">
+              {{media_embed type=html editor=false required=false}}
+            </div>
+          {{/if}}
+          <div class="call-to-action">
+            <a href="mailto:{{booker}}">BOOK {{name}} today</a>
           </div>
-        {{/if}}
-        <div class="call-to-action">
-          <a href="mailto:{{booker}}">BOOK {{name}} today</a>
         </div>
-      </div>
-      <div class="links">
-        {{#if booker}}
+        <div class="links">
+          {{#if booker}}
+            <div class="label">
+              Agent
+            </div>
+            <a href="mailto:{{booker}}">{{booker placeholder="Enter booker's email"}}</a>
+          {{/if}}
+          {{#if performance_type}}
+            <div class="label">Performance Type</div>
+            {{performance_type required=false}}
+          {{/if}}
+
+          {{#if press_kit_url}}
+            <div class="press-kit">
+              <a href="{{press_kit_url placeholder="Enter dropbox or other direct link to file" required=false}}">PRESS KIT</a>
+            </div>
+          {{/if}}
           <div class="label">
-            Agent
+            Social
           </div>
-          <a href="mailto:{{booker}}">{{booker placeholder="Enter booker's email"}}</a>
-        {{/if}}
-        {{#if performance_type}}
-          <div class="label">Performance Type</div>
-          {{performance_type required=false}}
-        {{/if}}
-
-        {{#if press_kit_url}}
-          <div class="press-kit">
-            <a href="{{press_kit_url placeholder="Enter dropbox or other direct link to file" required=false}}">PRESS KIT</a>
-          </div>
-        {{/if}}
-        <div class="label">
-          Social
+          <ul class="social">
+            {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-internet" title="homepage">&nbsp;</a></li>{{/if}}
+            {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank" class="socicon-facebook" title="facebook"></a></li>{{/if}}
+            {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank" class="socicon-soundcloud"></a></li>{{/if}}
+            {{#if bandcamp}}<li><a href="{{bandcamp required=false}}" target="_blank" class="socicon-bandcamp"></a></li>{{/if}}
+            {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank" class="socicon-twitter"></a></li>{{/if}}
+            {{#if ra}}<li><a href="{{ra required=false}}" target="_blank" class="socicon-residentadvisor"></a></li>{{/if}}
+            {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank" class="socicon-mixcloud"></a></li>{{/if}}
+            {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank" class="socicon-instagram"></a></li>{{/if}}
+          </ul>
         </div>
-        <ul class="social">
-          {{#if website}}<li><a href="{{website required=false}}" target="_blank" class="socicon-internet" title="homepage">&nbsp;</a></li>{{/if}}
-          {{#if facebook}}<li><a href="{{facebook required=false}}" target="_blank" class="socicon-facebook" title="facebook"></a></li>{{/if}}
-          {{#if soundcloud}}<li><a href="{{soundcloud required=false}}" target="_blank" class="socicon-soundcloud"></a></li>{{/if}}
-          {{#if bandcamp}}<li><a href="{{bandcamp required=false}}" target="_blank" class="socicon-bandcamp"></a></li>{{/if}}
-          {{#if twitter}}<li><a href="{{twitter required=false}}" target="_blank" class="socicon-twitter"></a></li>{{/if}}
-          {{#if ra}}<li><a href="{{ra required=false}}" target="_blank" class="socicon-residentadvisor"></a></li>{{/if}}
-          {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank" class="socicon-mixcloud"></a></li>{{/if}}
-          {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank" class="socicon-instagram"></a></li>{{/if}}
-        </ul>
       </div>
+      {{#if rss_feed_url}}<div data-rss="{{rss_feed_url required=false}}"></div>{{/if}}
     </div>
-    {{#if rss_feed_url}}<div data-rss="{{rss_feed_url required=false}}"></div>{{/if}}
   </main>
   {{/section}}
   <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
-  <script src="/javascripts/site.js"></script>
+  {{> footer}}
 </body>
 </html>
