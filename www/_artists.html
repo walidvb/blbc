@@ -36,7 +36,10 @@
             <div class="label">Performance Type</div>
             {{performance_type required=false}}
           {{/if}}
-
+          {{#if labels}}
+            <div class="label">Labels</div>
+            {{labels required=false}}
+          {{/if}}
           {{#if press_kit_url}}
             <div class="press-kit">
               <a href="{{press_kit_url placeholder="Enter dropbox or other direct link to file" required=false}}">PRESS KIT</a>
