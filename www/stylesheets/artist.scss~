@@ -78,7 +78,3 @@ main .artist-name{
     grid-template-columns: 3fr 1fr;
   }
 }
-
-.media iframe + iframe{
-    margin-top: 1rem;
-}
