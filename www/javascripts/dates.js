@@ -22,7 +22,7 @@ if(rssContainer){
   parser.parseURL(rssLink, options, (err, parsed) => {
     const entries = parsed.feed.entries
     const calendar = entries.map(entryAsHtml)
-    rssContainer.innerHTML = calendar
+    rssContainer.innerHTML = calendar.join('')
     console.log(entries[0])
   })
 
