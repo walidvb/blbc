@@ -22,6 +22,7 @@
   display: flex;
 }
 .social li a{
+  font-size: 1rem;
   padding: .5rem .5rem;
   display: inline-block;
   text-decoration: none;
@@ -44,9 +45,12 @@ main .artist-name{
   margin-top: 1rem;
   margin-bottom: 0rem;
   text-transform: uppercase;
-  // color: lighten(#111, 50%);
-  font-size: smaller;
   font-weight: bolder;
+  font-size: 1rem;
+}
+
+.links{
+  font-size: 0.875rem;
 }
 .label:first-child{
   margin-top: 0;
@@ -54,6 +58,7 @@ main .artist-name{
 
 .press-kit{
   margin-top: 1rem;
+  font-size: 1rem;
 }
 
 .medias{
