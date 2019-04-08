@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Thasadith:400,400i,700');
+// @import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Thasadith:400,400i,700');
 
 *{
   box-sizing: border-box;
@@ -28,11 +28,16 @@ html{
   background-attachment: fixed;
   min-height: 100vh;
   color: #111;
+  // --font-serif: 'Old Standard TT', serif;
+  --font-serif: Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.611111111;
 }
 
 body{
   color: #111;
-  font-family: 'Thasadith', sans-serif;
+  // font-family: 'Thasadith', sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0 15px;
   min-height: 100vh;
