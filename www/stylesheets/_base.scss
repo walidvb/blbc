@@ -54,15 +54,22 @@ main{
   body{
     padding: 0;
   }
-  main{
+  main, .slogan{
     max-width: 720px;
+  }
+  main{
     padding-top: 8rem;
     padding-bottom: 2rem;
     margin: auto;
   }
 }
 @media (min-width:991px){
-  main{
+  .slogan-hack{
+    padding-left: 75%;
+    overflow: visible;
+    white-space: nowrap;
+  }
+  main, .slogan{
     max-width: 920px;
   }
 }
