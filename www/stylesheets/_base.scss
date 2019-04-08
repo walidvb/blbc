@@ -89,14 +89,14 @@ ul{
 
 
 .visible-xs{
-  display: none;
+  display: none!important;
 }
 
 @media (max-width:767px){
   .hidden-xs{
-    display: none;
+    display: none!important;
   }
   .visible-xs{
-    display: inline-block;
+    display: inline-block!important;
   }
 }
