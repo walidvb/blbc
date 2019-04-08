@@ -59,6 +59,17 @@ main .artist-name{
 .medias{
   margin: 1rem 0;
 }
+
+.gigs-container{
+  padding: 5px;
+  background-color: lighten(#111, 85%);
+}
+.gig-date{
+  color: lighten(#111, 30%);
+}
+.gig:not(:last-child){
+  margin-bottom: 1rem;
+}
 .call-to-action{
   a{
     display: inline-block;

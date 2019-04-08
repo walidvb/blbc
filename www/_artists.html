@@ -13,8 +13,8 @@
     <div class="fade-up delayer">
       <div class="bio-content">
         <div>
-          <div class="picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
-          <h1 class="artist-name">{{name}}</h1>
+          <div class="hidden-xs picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
+          <h1 class="hidden-xs artist-name">{{name}}</h1>
           {{biography type=html}}
         </div>
         <div class="links">
@@ -58,9 +58,19 @@
               {{media_embed type=html editor=false required=false}}
             </div>
           {{/if}}
+          {{#if rss_feed_url}}
+          <div class="gigs-container">
+            <div class="label">
+              Upcoming events
+            </div>
+            <div data-rss="{{rss_feed_url required=false}}"></div>
+          </div>
+          {{/if}}
         </div>
+        <h1 class="visible-xs artist-name">{{name}}</h1>
+        <div class="visible-xs picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
       </div>
-      {{#if rss_feed_url}}<div data-rss="{{rss_feed_url required=false}}"></div>{{/if}}
+
     </div>
   </main>
   {{/section}}

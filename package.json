@@ -4,5 +4,7 @@
   "scripts": {
     "start": "vapid start ."
   },
-  "dependencies": {}
+  "dependencies": {
+    "rss-parser-browser": "^2.2.2"
+  }
 }

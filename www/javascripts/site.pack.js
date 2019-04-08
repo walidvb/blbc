@@ -8,6 +8,7 @@
 //
 // To learn more, visit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 
+import './dates'
 const visiters = document.querySelectorAll('.visit-trigger');
 visiters.forEach(node => {
   if(node.pathname != window.location.pathname){
