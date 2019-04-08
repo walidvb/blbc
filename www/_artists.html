@@ -16,6 +16,11 @@
           <div class="hidden-xs picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
           <h1 class="hidden-xs artist-name">{{name}}</h1>
           {{biography type=html}}
+          {{#if media_embed}}
+          <div class="medias">
+            {{media_embed type=html editor=false required=false}}
+          </div>
+          {{/if}}
         </div>
         <div class="links">
           {{#if booker}}
@@ -53,11 +58,6 @@
           <div class="press-kit">
             <a href="mailto:{{booker}}">BOOK</a>
           </div>
-          {{#if media_embed}}
-            <div class="medias">
-              {{media_embed type=html editor=false required=false}}
-            </div>
-          {{/if}}
           {{#if rss_feed_url}}
           <div class="gigs-container">
             <div class="label" style="margin-bottom: 1rem;">

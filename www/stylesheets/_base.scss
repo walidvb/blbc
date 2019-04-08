@@ -28,10 +28,12 @@ html{
   background-attachment: fixed;
   min-height: 100vh;
   color: #111;
-  // --font-serif: 'Old Standard TT', serif;
   --font-serif: Helvetica, Arial, sans-serif;
+  // --font-serif: 'Old Standard TT', serif;
+  --font-serif: 'Helvetica LT Std', Helvetica, sans-serif;
   letter-spacing: 2px;
   line-height: 1.611111111;
+  font-weight: 300;
 }
 
 body{
@@ -47,7 +49,7 @@ main{
 }
 @media (min-width:768px){
   html{
-    font-size: 18px;
+    font-size: 14px;
   }
   body{
     padding: 0;

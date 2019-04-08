@@ -1,8 +1,8 @@
 {{#section general}}
   <div class="slogan">
     <div>
-      <div class="hidden-xs">{{slogan}}</div>
-      <div class="visible-xs">{{slogan_mobile type=html}}</div>
+      {{#if slogan}} <div class="hidden-xs">{{slogan required=false}}</div>{{/if}}
+      <div class="visible-xs">{{slogan_mobile required=false type=html}}</div>
       <div class="menu-links">
         <a href="/#artists" class="visit-trigger">artists</a>
         <a href="/about" class="visit-trigger">about</a>
