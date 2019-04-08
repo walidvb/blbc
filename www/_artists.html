@@ -16,6 +16,12 @@
           <div class="hidden-xs picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
           <h1 class="hidden-xs artist-name">{{name}}</h1>
           {{biography type=html}}
+          {{#if press_and_interviews}}
+            <div>
+              <div class="label">Press & Interviews</div>
+              {{press_and_interviews type=html required=false}}
+            </div>
+          {{/if}}
           {{#if media_embed}}
           <div class="medias">
             {{media_embed type=html editor=false required=false}}
