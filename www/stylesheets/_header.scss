@@ -56,6 +56,10 @@ h1{
     display: initial;
   }
   a{
+    text-decoration: none;
     padding: 0 .5rem;
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
