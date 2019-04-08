@@ -9,12 +9,16 @@ const rssContainer = document.querySelector('[data-rss]')
 if(rssContainer){
   const rssLink = rssContainer.attributes['data-rss'].value
   const dateOptions = {
-    weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'
-
+    weekday: 'long'
+  }
+  const formatDate = (date) => {
+    const dd = new Date(date)
+    const day = dd.toLocaleDateString('en-UK', dateOptions)
+    return `${day}, ${dd.getDate()}.${dd.getMonth()+1}.${dd.getFullYear()}`
   }
   const entryAsHtml = (item) => `
     <div class="gig">
-      <div class="gig-date">${new Date(item['ev:startdate']).toLocaleDateString('en-US', dateOptions)}</div>
+      <div class="gig-date">${formatDate(item['ev:startdate'])}</div>
       <div class="gig-name">${item['ev:name']}</div>
       <div class="gig-location">${item['ev:location']}, ${item['ev:country']}</div>
     </div>
