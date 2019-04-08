@@ -5,7 +5,7 @@
     left: 1rem;
   }
   text-decoration: none;
-  font-family: 'Old Standard TT', serif;
+  font-family: var(--font-serif);
   &:hover{
     text-decoration: underline;
   }
@@ -44,9 +44,9 @@ main .artist-name{
   margin-top: 1rem;
   margin-bottom: 0rem;
   text-transform: uppercase;
-  color: lighten(#111, 50%);
+  // color: lighten(#111, 50%);
   font-size: smaller;
-  //font-weight: bold;
+  font-weight: bold;
 }
 .label:first-child{
   margin-top: 0;
