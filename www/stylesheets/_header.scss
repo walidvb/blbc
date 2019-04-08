@@ -1,5 +1,5 @@
 .slogan{
-  font-family: var(--font-serif);
+  font-family: 'Old Standard TT', serif;
   font-size: 1rem;
   margin-top: 1rem;
   color: #111;
@@ -51,7 +51,6 @@ h1{
   width: 100%;
   font-size: 1rem;
   display: flex;
-  text-transform: uppercase;
   @media (min-width:768px){
     display: initial;
   }
