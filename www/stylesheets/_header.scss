@@ -41,9 +41,10 @@ h1{
 @media (min-width:767px){
   .slogan{
     position: fixed;
-    right: 1rem;
+    right: 0;
+    left: 0;
     z-index: 100;
-    text-align: right;
+    margin: .5rem auto;
   }
 }
 
