@@ -19,7 +19,7 @@ if(rssContainer){
   const entryAsHtml = (item) => `
     <div class="gig">
       <div class="gig-date">${formatDate(item['ev:startdate'])}</div>
-      <div class="gig-name">${item['ev:name']}</div>
+      <div class="gig-name"><a href="${item['link']}" target="_blank">${item['ev:name']}</a></div>
       <div class="gig-location">${item['ev:location']}, ${item['ev:country']}</div>
     </div>
   `

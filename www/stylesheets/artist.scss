@@ -46,7 +46,7 @@ main .artist-name{
   text-transform: uppercase;
   // color: lighten(#111, 50%);
   font-size: smaller;
-  font-weight: bold;
+  font-weight: bolder;
 }
 .label:first-child{
   margin-top: 0;
@@ -63,6 +63,13 @@ main .artist-name{
 .gigs-container{
   padding: 5px;
   background-color: lighten(#111, 85%);
+  margin-top: 1rem;
+}
+.gigs-container a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 .gig-date{
   color: lighten(#111, 30%);
