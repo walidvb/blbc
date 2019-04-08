@@ -5,7 +5,7 @@
     left: 1rem;
   }
   text-decoration: none;
-  font-family: 'Old Standard TT', serif;
+  font-family: var(--font-serif);
   &:hover{
     text-decoration: underline;
   }
@@ -44,9 +44,9 @@ main .artist-name{
   margin-top: 1rem;
   margin-bottom: 0rem;
   text-transform: uppercase;
-  color: lighten(#111, 50%);
+  // color: lighten(#111, 50%);
   font-size: smaller;
-  //font-weight: bold;
+  font-weight: bold;
 }
 .label:first-child{
   margin-top: 0;
@@ -59,10 +59,19 @@ main .artist-name{
 .medias{
   margin: 1rem 0;
 }
+
+.gigs-container{
+  padding: 5px;
+  background-color: lighten(#111, 85%);
+}
+.gig-date{
+  color: lighten(#111, 30%);
+}
+.gig:not(:last-child){
+  margin-bottom: 1rem;
+}
 .call-to-action{
-  text-align: center;
   a{
-    padding: 1rem;
     display: inline-block;
   }
 }

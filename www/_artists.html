@@ -10,20 +10,12 @@
 <body class="long">
   {{> header}}
   <main id="artist" class="bio ">
-    <div class="picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
     <div class="fade-up delayer">
-      <h1 class="artist-name">{{name}}</h1>
       <div class="bio-content">
         <div>
+          <div class="hidden-xs picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
+          <h1 class="hidden-xs artist-name">{{name}}</h1>
           {{biography type=html}}
-          {{#if media_embed}}
-            <div class="medias">
-              {{media_embed type=html editor=false required=false}}
-            </div>
-          {{/if}}
-          <div class="call-to-action">
-            <a href="mailto:{{booker}}">BOOK {{name}} today</a>
-          </div>
         </div>
         <div class="links">
           {{#if booker}}
@@ -58,9 +50,27 @@
             {{#if mixcloud}}<li><a href="{{mixcloud required=false}}" target="_blank" class="socicon-mixcloud"></a></li>{{/if}}
             {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank" class="socicon-instagram"></a></li>{{/if}}
           </ul>
+          <div class="press-kit">
+            <a href="mailto:{{booker}}">BOOK</a>
+          </div>
+          {{#if media_embed}}
+            <div class="medias">
+              {{media_embed type=html editor=false required=false}}
+            </div>
+          {{/if}}
+          {{#if rss_feed_url}}
+          <div class="gigs-container">
+            <div class="label">
+              Upcoming events
+            </div>
+            <div data-rss="{{rss_feed_url required=false}}"></div>
+          </div>
+          {{/if}}
         </div>
+        <h1 class="visible-xs artist-name">{{name}}</h1>
+        <div class="visible-xs picture fade-up delayer">{{photo_detail label="artist page image"  type=image width=1000 }}</div>
       </div>
-      {{#if rss_feed_url}}<div data-rss="{{rss_feed_url required=false}}"></div>{{/if}}
+
     </div>
   </main>
   {{/section}}
