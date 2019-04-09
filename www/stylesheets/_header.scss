@@ -26,15 +26,13 @@ h1{
     margin-bottom: 2rem;
   }
   .slogan a{
-    text-align: right;
     display: inline-block;
-    width: 100%;
   }
 }
 
 @media (min-width:767px){
   .slogan-hack{
-    padding-left: 75%;
+    padding-left: calc(75% + .5rem);
     overflow: visible;
     white-space: nowrap;
   }
@@ -56,11 +54,9 @@ h1{
 .menu-links{
   width: 100%;
   font-size: 1rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   text-transform: uppercase;
-  @media (min-width:768px){
-    display: initial;
-  }
   a{
     text-decoration: none;
     padding: 0 .5rem;
@@ -68,5 +64,14 @@ h1{
     &:hover{
       text-decoration: underline;
     }
+  }
+  a:first-child{
+    padding-left: 0;
+  }
+  a:last-child{
+    padding-right: 0;
+  }
+  @media (min-width:768px){
+    display: initial;
   }
 }
