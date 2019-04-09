@@ -6,6 +6,8 @@ const options = {
 }
 
 const rssContainer = document.querySelector('[data-rss]')
+const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
+
 if(rssContainer){
   const rssLink = rssContainer.attributes['data-rss'].value
   const dateOptions = {
@@ -23,7 +25,8 @@ if(rssContainer){
       <div class="gig-location">${item['ev:location']}, ${item['ev:country']}</div>
     </div>
   `
-  parser.parseURL(rssLink, options, (err, parsed) => {
+  parser.parseURL(CORS_PROXY+rssLink, options, (err, parsed) => {
+    console.log(err)
     const entries = parsed.feed.entries
     const calendar = entries.map(entryAsHtml)
     rssContainer.innerHTML = calendar.join('')
