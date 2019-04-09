@@ -12,8 +12,6 @@ h1{
 }
 
 .logo{
-  position: fixed;
-  bottom: 1rem; right: 1rem;
   width: 200px;
 }
 
@@ -39,12 +37,23 @@ h1{
 }
 
 @media (min-width:767px){
+  .slogan-hack{
+    padding-left: 75%;
+    overflow: visible;
+    white-space: nowrap;
+  }
+  .bottom .slogan-hack{
+    padding-left: calc(75% + 5px);
+  }
   .slogan{
     position: fixed;
     right: 0;
     left: 0;
     z-index: 100;
-    margin: .5rem auto;
+    margin: 1rem auto;
+    &.bottom{
+      bottom: 0;
+    }
   }
 }
 
