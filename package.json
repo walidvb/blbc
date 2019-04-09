@@ -1,6 +1,8 @@
 {
   "name": "blbc",
-  "vapid": {},
+  "vapid": {
+    "port": 3000
+  },
   "scripts": {
     "start": "vapid start ."
   },

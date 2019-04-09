@@ -5,7 +5,7 @@
     left: 1rem;
   }
   text-decoration: none;
-  font-family: var(--font-serif);
+  font-family: 'Old Standard TT', serif;
   &:hover{
     text-decoration: underline;
   }
@@ -22,7 +22,6 @@
   display: flex;
 }
 .social li a{
-  font-size: 1rem;
   padding: .5rem .5rem;
   display: inline-block;
   text-decoration: none;
@@ -45,12 +44,9 @@ main .artist-name{
   margin-top: 1rem;
   margin-bottom: 0rem;
   text-transform: uppercase;
-  font-weight: bolder;
-  font-size: 1rem;
-}
-
-.links{
-  font-size: 0.875rem;
+  color: lighten(#111, 50%);
+  font-size: smaller;
+  //font-weight: bold;
 }
 .label:first-child{
   margin-top: 0;
@@ -58,32 +54,15 @@ main .artist-name{
 
 .press-kit{
   margin-top: 1rem;
-  font-size: 1rem;
 }
 
 .medias{
   margin: 1rem 0;
 }
-
-.gigs-container{
-  padding: 5px;
-  background-color: lighten(#111, 85%);
-  margin-top: 1rem;
-}
-.gigs-container a{
-  text-decoration: none;
-  &:hover{
-    text-decoration: underline;
-  }
-}
-.gig-date{
-  color: lighten(#111, 30%);
-}
-.gig:not(:last-child){
-  margin-bottom: 1rem;
-}
 .call-to-action{
+  text-align: center;
   a{
+    padding: 1rem;
     display: inline-block;
   }
 }
@@ -98,8 +77,4 @@ main .artist-name{
     grid-gap: 25px;
     grid-template-columns: 3fr 1fr;
   }
-}
-
-.media iframe + iframe{
-    margin-top: 1rem;
 }
