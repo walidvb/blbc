@@ -52,7 +52,7 @@ h1{
 
 @media (min-width:991px){
   .slogan-hack{
-    padding-left: calc(75% + .5rem);
+    padding-left: calc(75% + .5rem - 1px);
   }
 }
 .menu-links{
