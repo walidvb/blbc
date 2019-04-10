@@ -32,7 +32,6 @@ h1{
 
 @media (min-width:767px){
   .slogan-hack{
-    padding-left: calc(75% + .5rem);
     overflow: visible;
     white-space: nowrap;
   }
@@ -51,6 +50,11 @@ h1{
   }
 }
 
+@media (min-width:991px){
+  .slogan-hack{
+    padding-left: calc(75% + .5rem);
+  }
+}
 .menu-links{
   width: 100%;
   font-size: 1rem;
