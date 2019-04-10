@@ -3,13 +3,13 @@
       
     {{> head}}
     
-    {{#section artists}}
-        <title>BLBC | {{name}}</title>
-        <meta property="og:title" content="BLBC | {{name}}">
-        <meta property="og:description" content="{{social_description label='text shared on facebook etc'}}">
-        <meta property="og:image" content="{{photo_detail type=image width=1000 tag=false}}">
-        {{#section artists}}
-        <meta property="og:site_name" content="{{name}}">
+    {{#sections artists}}
+      <title>BLBC | {{name}}</title>
+      <meta property="og:title" content="BLBC | {{name}}">
+      <meta property="og:description" content="{{social_description label='text shared on facebook etc'}}">
+      <meta property="og:image" content="{{photo_detail type=image width=1000 tag=false}}">
+      <meta property="og:site_name" content="{{name}}">
+    {{/sections}}
   </head>
 {{#section artists}}
 <body class="long">
