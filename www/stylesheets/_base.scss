@@ -28,7 +28,6 @@ html{
   background-attachment: fixed;
   min-height: 100vh;
   color: #111;
-  --font-serif: Helvetica, Arial, sans-serif;
   // --font-serif: 'Old Standard TT', serif;
   --font-serif: 'Helvetica LT Std', Helvetica, sans-serif;
   letter-spacing: 2px;
@@ -39,7 +38,7 @@ html{
 body{
   color: #111;
   // font-family: 'Thasadith', sans-serif;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica LT Std', Arial, sans-serif;
   margin: 0;
   padding: 0 15px;
   min-height: 100vh;
