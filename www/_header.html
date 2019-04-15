@@ -3,7 +3,7 @@
   <div class="slogan-hack">
     <div class="container">
         {{#if slogan}} <div class="hidden-xs">{{slogan required=false}}</div>{{/if}}
-        <div class="visible-xs">{{slogan_mobile required=false type=html}}</div>
+        {{#if slogan_mobile}}<div class="visible-xs">{{slogan_mobile required=false type=html}}</div>{{/if}}
         <div class="menu-links">
           <a href="/#artists" class="visit-trigger">artists</a>
           <a href="/about" class="visit-trigger">about</a>
