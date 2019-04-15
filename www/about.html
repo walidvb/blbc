@@ -6,9 +6,11 @@
 <body class="long">
   {{> header }}
   <main class="fade-up">
-    {{#section about}}
-      {{about type=html}}
-    {{/section}}
+    <div class="body-container">
+      {{#section about}}
+        {{about type=html}}
+      {{/section}}
+    </div>
   </main>
   <div class="container mx-auto">
     <div class="credits">

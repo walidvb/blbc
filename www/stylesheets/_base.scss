@@ -114,3 +114,9 @@ ul{
     z-index: 990;
   }
 }
+
+.body-container{
+  @media (min-width:767px){
+    max-width: 75%;
+  }
+}
