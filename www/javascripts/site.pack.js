@@ -30,6 +30,7 @@ visiters.forEach(node => {
         })
       })
     }
-    node.addEventListener('touchstart click', delayVisit)
+    node.addEventListener('click', delayVisit)
+    node.addEventListener('touchstart', delayVisit)
   }
 })
