@@ -41,6 +41,9 @@
 
 .photo img{
   max-height: 80vh;
+}
+
+.photo img{
   transition: all .15s ease-out;
 }
 .bio{
@@ -55,13 +58,13 @@
 
 /* HOVER STYLES */
 
-.no-touch body:not(.out) .artist-wrapper:hover, .clicked{
+body:not(.out) .artist-wrapper:hover, .clicked{
   color: #111!important;
   .photo{
     display: flex!important;
   }
 }
-.no-touch .artists-list .name-wrapper:hover .artist-name{
+.artists-list .name-wrapper:hover .artist-name{
   z-index: 3;
   border-bottom: solid 3px #111;
 }
@@ -81,18 +84,18 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .no-touch .artists-list:hover .name-wrapper{
+  .artists-list:hover .name-wrapper{
     //color: lighten(#111, 90%);
   }
 
   .photo{
     z-index: 1;
   }
-  .no-touch .artist-wrapper:hover .name-wrapper{
+  .artist-wrapper:hover .name-wrapper{
     z-index: 2;
     position: relative;
   }
-  .no-touch .artists-list:hover .artist-wrapper:not(:hover){
+  .artists-list:hover .artist-wrapper:not(:hover){
     z-index: 0;
   }
 }

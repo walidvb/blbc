@@ -9,8 +9,6 @@
 // To learn more, visit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 
 import './dates'
-var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
-document.querySelector('html').classList.add(supportsTouch ? 'touch' : 'no-touch')
 const visiters = document.querySelectorAll('.visit-trigger');
 visiters.forEach(node => {
   if(node.pathname != window.location.pathname){
@@ -30,6 +28,7 @@ visiters.forEach(node => {
         })
       })
     }
-    node.addEventListener('touchstart click', delayVisit)
+    node.addEventListener('click', delayVisit)
+    node.addEventListener('touchstart', delayVisit)
   }
 })
