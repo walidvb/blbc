@@ -6,7 +6,7 @@
   }
   text-decoration: none;
   font-family: var(--font-serif);
-  &:hover{
+  .no-touch &:hover{
     text-decoration: underline;
   }
 }
@@ -32,7 +32,7 @@
 .social li:first-child a{
   padding: .5rem 0.5rem .5rem 0;
 }
-.social li a:hover{
+.no-touch .social li a:hover{
   transform: scale(1.2);
 }
 
