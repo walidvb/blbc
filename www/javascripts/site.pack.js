@@ -9,6 +9,7 @@
 // To learn more, visit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 
 import './dates'
+
 var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 document.querySelector('html').classList.add(supportsTouch ? 'touch' : 'no-touch')
 const visiters = document.querySelectorAll('.visit-trigger');
@@ -33,3 +34,4 @@ visiters.forEach(node => {
     node.addEventListener('click', delayVisit)
   }
 })
+console.log("Site by walidvb.com 💥");
