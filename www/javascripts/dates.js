@@ -26,9 +26,9 @@ if(rssContainer){
     </div>
   `
   parser.parseURL(CORS_PROXY+rssLink, options, (err, parsed) => {
-    console.log(err)
+    if(err){ console.log(err);}
     const entries = parsed.feed.entries
-    const calendar = entries.map(entryAsHtml)
+    const calendar = entries.reverse().map(entryAsHtml)
     rssContainer.innerHTML = calendar.join('')
     console.log(entries[0])
   })
