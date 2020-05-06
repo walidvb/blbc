@@ -67,7 +67,7 @@
             {{#if instagram}}<li><a href="{{instagram required=false}}" target="_blank" class="socicon-instagram"></a></li>{{/if}}
           </ul>
           <div class="press-kit">
-            <a href="mailto:{{booker}}">BOOK {{name}}</a>
+            <a href="mailto:{{booker}}?subject={{name}}%20Booking%20Request&body=Thanks%20for%20your%20interest%20in%20booking%20our%20artist.%20For%20a%20speedy%20reply%2C%20please%20fill%20in%20the%20complete%20form%20below.%0ALooking%20forward%20to%20your%20offer!%0A%0ABooking%20Offer%3A%0A%0Aartist%3A%20{{name}}%0Aname%20of%20event%3A%0Aevent%20website%3A%0Apast%20guests%3A%0Avenue%20name%3A%0Avenue%20address%3A%0Avenue%20a%20website%3A%0Adate%3A%0Aproposed%20line-up%20and%20billing%3A%0Afloors%2Fcapacity%3A%0Asound%2Fmonitoring%3A%0Afee%20offer%20(including%2015%25%20booking%20fee)%3A%0Awithholding%20tax%20Y%2FN%3A%0Aentry%20price%3A%0Aevent%20sponsors%3A%0Aset%20time%3A%0Adj%20before%0Adj%20after%3A%0Ahotel%20name%20and%20address%3A%0A">BOOK {{name}}</a>
           </div>
           {{#if rss_feed_url}}
           <div class="gigs-container">
@@ -85,7 +85,6 @@
     </div>
   </main>
   {{/section}}
-  <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
   {{> footer}}
 </body>
 </html>
