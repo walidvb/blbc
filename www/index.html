@@ -13,18 +13,18 @@
   </head>
 <body class="home">
   {{> header}}
-  <ul class="artists-list" id="artists">
-      {{#section artists multiple=true sortable=true}}
-        <li class="artist-wrapper delayer">
-          <a href="{{_permalink}}" class="name-wrapper visit-trigger delayed fade-up">
-            <h2 class="artist-name">{{name}}</h2>
-          </a>
-          <div class="photo up">
-            <img src="{{photo label="home page image" tag=false type=image}}?w=800">
-          </div>
-        </li>
-      {{/section}}
-      </ul>
+  <ul class="container artists-list" id="artists">
+    {{#section artists multiple=true sortable=true}}
+      <li class="artist-wrapper delayer">
+        <a href="{{_permalink}}" class="name-wrapper visit-trigger delayed fade-up">
+          <h2 class="artist-name">{{name}}</h2>
+        </a>
+        <div class="photo up">
+          <img src="{{photo label="home page image" tag=false type=image}}?w=800">
+        </div>
+      </li>
+    {{/section}}
+    </ul>
   {{> footer}}
 
 </body>

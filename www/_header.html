@@ -1,9 +1,27 @@
 {{#section general}}
 <div class="slogan">
+  <div class="logo">
+    <a href="/"><img src="{{logo type=image tag=false required=false width=300}}" class="logo"></a>
+  </div>
   <div class="slogan-hack">
     <div class="container">
-        {{#if slogan}} <div class="hidden-xs">{{slogan required=false}}</div>{{/if}}
-        {{#if slogan_mobile}}<div class="visible-xs">{{slogan_mobile required=false type=html}}</div>{{/if}}
+      <ul class="social social--header">
+        {{#if facebook_page }}
+          <li>
+            <a class="socicon-facebook" href="{{facebook_page required}}" target="_blank"></a>
+          </li>
+        {{/if}}
+        {{#if instagram_page }}
+          <li>
+            <a class="socicon-instagram" href="{{instagram_page required}}" target="_blank"></a>
+          </li>
+        {{/if}}
+        {{#if soundcloud_page }}
+          <li>
+            <a class="socicon-soundcloud" href="{{soundcloud_page required}}" target="_blank"></a>
+          </li>
+        {{/if}}
+      </ul>
         <div class="menu-links">
           <a href="/" class="visit-trigger">artists</a>
           <a href="/about" class="visit-trigger">about</a>
@@ -13,9 +31,4 @@
     </div>
   </div>
   <div style="display:none;">{{about type=html}}</div>
-  <div class="slogan bottom">
-    <div class="slogan-hack">
-      <a href="/"><img src="{{logo type=image tag=false required=false width=300}}" class="logo"></a>
-    </div>
-  </div>
 {{/section}}

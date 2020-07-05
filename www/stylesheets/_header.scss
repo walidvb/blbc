@@ -13,9 +13,9 @@ h1{
 
 @media (max-width:767px){
   .slogan{
-    .home &{
+    .logo{
+      margin-bottom: .5rem;
     }
-    display: flex;
     align-items: center;
     font-size: 1.8rem;
     line-height: 2rem;
@@ -29,13 +29,35 @@ h1{
   }
 }
 
+.social.social--header 
+{
+  margin-bottom: 2rem;
+  a{
+    margin-right: .5rem;
+  }
+}
 @media (min-width:767px){
+  .logo{
+    max-height: 4rem;
+    transform: translateY(3px);
+  }
+  .social.social--header{
+    position: absolute;
+    top: 0;
+    right: 0%;
+    
+    display: grid;
+    grid-auto-flow: column;
+    a{
+      padding: 0px!important;
+      place-content: center;
+
+    }
+  }
   .slogan-hack{
     overflow: visible;
     white-space: nowrap;
-  }
-  .bottom .slogan-hack{
-    padding-left: calc(75% + 5px);
+    position: relative;
   }
   .slogan{
     position: fixed;
@@ -43,15 +65,22 @@ h1{
     left: 0;
     z-index: 100;
     margin: 1rem auto;
-    &.bottom{
-      bottom: 0;
-    }
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 3rem;
+    align-items: center;
   }
 }
 
 @media (min-width:991px){
+  .slogan{
+    grid-template-columns: 1fr auto;
+  }
   .slogan-hack{
-    padding-left: calc(75% + .5rem - 1px);
+    transform: translateX(1.9rem);
+  }
+  .social.social--header{
+    transform: translateX(calc(100% + 1rem));
   }
 }
 .menu-links{

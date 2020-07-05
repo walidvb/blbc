@@ -72,11 +72,11 @@
 }
 @media (min-width:767px){
   .artists-list{
-    width: 100vw;
-    padding: 15vh 15vw;
     overflow-y: auto;
     display: flex;
-    align-items: center;
+    max-height: 80vh;
+    padding: 25vh 0;
+
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
@@ -99,6 +99,5 @@
 
 @media (min-width:991px){
   .artists-list{
-    padding: 20vh 20vw;
   }
 }
