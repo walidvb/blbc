@@ -1,6 +1,6 @@
 import { vercelPreset } from "@vercel/react-router/vite";
 import type { Config } from "@react-router/dev/config";
-import { getArtists } from "./app/lib/strapi";
+import { getArtists } from "./app/lib/prismic";
 
 export default {
   ssr: true,

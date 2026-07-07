@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -9,10 +9,7 @@ const publicDir = resolve(web, "public");
 const stylesDir = resolve(publicDir, "stylesheets");
 const scriptsDir = resolve(publicDir, "javascripts");
 
-mkdirSync(publicDir, { recursive: true });
-rmSync(stylesDir, { recursive: true, force: true });
 mkdirSync(stylesDir, { recursive: true });
-cpSync(resolve(www, "stylesheets/legacy.css"), resolve(stylesDir, "legacy.css"));
 cpSync(resolve(www, "stylesheets/fonts"), resolve(stylesDir, "fonts"), {
   recursive: true,
 });

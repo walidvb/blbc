@@ -1,0 +1,116 @@
+@media (min-width: 768px) {
+  .back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+}
+.back {
+  text-decoration: none;
+  font-family: var(--font-serif);
+}
+.no-touch .back:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .picture {
+    margin: 0 -15px;
+  }
+}
+.social {
+  display: flex;
+}
+
+.social li a {
+  font-size: 1rem;
+  padding: 0.5rem 0.5rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  opacity: 0.85;
+}
+
+.social li:first-child a {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.no-touch .social li a:hover {
+  transform: scale(1.2);
+}
+
+.press {
+  margin-top: 2rem;
+}
+
+main .artist-name {
+  border-bottom: solid 3px #111;
+  margin-bottom: 2em;
+}
+
+.label {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.links {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.label:first-child {
+  margin-top: 0;
+}
+
+.press-kit {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.medias {
+  margin: 1rem 0;
+}
+
+.gigs-container {
+  padding: 5px;
+  background-color: rgb(233.75, 233.75, 233.75);
+  margin-top: 1rem;
+}
+
+.gigs-container a {
+  text-decoration: none;
+}
+.gigs-container a:hover {
+  text-decoration: underline;
+}
+
+.gig-date {
+  color: rgb(93.5, 93.5, 93.5);
+}
+
+.gig:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.call-to-action a {
+  display: inline-block;
+}
+
+.bio-content {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .bio-content {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 3fr 1fr;
+  }
+}
+.media iframe + iframe {
+  margin-top: 1rem;
+}

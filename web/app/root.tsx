@@ -10,6 +10,8 @@ import {
 
 import type { Route } from "./+types/root";
 
+import "../stylesheets/global.css";
+
 type RouteHandle = {
   bodyClass?: string;
 };

@@ -1,0 +1,158 @@
+{
+  "id": "artist",
+  "label": "Artist",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug"
+        }
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name"
+        }
+      },
+      "photo": {
+        "type": "Image",
+        "config": {
+          "label": "Photo"
+        }
+      },
+      "photo_detail": {
+        "type": "Image",
+        "config": {
+          "label": "Photo detail"
+        }
+      },
+      "social_description": {
+        "type": "Text",
+        "config": {
+          "label": "Social description"
+        }
+      },
+      "biography": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Biography",
+          "multi": "paragraph,strong,em,hyperlink,heading2,heading3,list-item,o-list-item,embed,image"
+        }
+      },
+      "press_and_interviews": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Press & interviews",
+          "multi": "paragraph,strong,em,hyperlink,heading2,heading3,list-item,o-list-item,embed,image"
+        }
+      },
+      "media1": {
+        "type": "Group",
+        "config": {
+          "label": "Media",
+          "fields": {
+            "media_embed": {
+              "type": "Embed",
+              "config": {
+                "label": "Media embed"
+              }
+            }
+          }
+        }
+      },
+      "booker": {
+        "type": "Text",
+        "config": {
+          "label": "Booker email"
+        }
+      },
+      "performance_type": {
+        "type": "Text",
+        "config": {
+          "label": "Performance type"
+        }
+      },
+      "labels": {
+        "type": "Text",
+        "config": {
+          "label": "Labels"
+        }
+      },
+      "press_kit": {
+        "type": "Link",
+        "config": {
+          "label": "Press kit",
+          "select": "media",
+          "allowTargetBlank": true
+        }
+      },
+      "rss_feed_url": {
+        "type": "Text",
+        "config": {
+          "label": "RSS feed URL"
+        }
+      }
+    },
+    "Social": {
+      "website": {
+        "type": "Link",
+        "config": {
+          "label": "Website",
+          "allowTargetBlank": true
+        }
+      },
+      "facebook": {
+        "type": "Link",
+        "config": {
+          "label": "Facebook",
+          "allowTargetBlank": true
+        }
+      },
+      "soundcloud": {
+        "type": "Link",
+        "config": {
+          "label": "SoundCloud",
+          "allowTargetBlank": true
+        }
+      },
+      "bandcamp": {
+        "type": "Link",
+        "config": {
+          "label": "Bandcamp",
+          "allowTargetBlank": true
+        }
+      },
+      "twitter": {
+        "type": "Link",
+        "config": {
+          "label": "Twitter",
+          "allowTargetBlank": true
+        }
+      },
+      "ra": {
+        "type": "Link",
+        "config": {
+          "label": "Resident Advisor",
+          "allowTargetBlank": true
+        }
+      },
+      "mixcloud": {
+        "type": "Link",
+        "config": {
+          "label": "Mixcloud",
+          "allowTargetBlank": true
+        }
+      },
+      "instagram": {
+        "type": "Link",
+        "config": {
+          "label": "Instagram",
+          "allowTargetBlank": true
+        }
+      }
+    }
+  }
+}

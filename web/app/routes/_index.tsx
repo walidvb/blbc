@@ -3,7 +3,7 @@ import { BaseHead } from "../components/BaseHead";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/SiteChrome";
 import { cacheHeaders } from "../lib/cache";
-import { getArtists, getSite, mediaUrl } from "../lib/strapi";
+import { getArtists, getSite, mediaUrl } from "../lib/prismic";
 
 export function headers() {
   return cacheHeaders();

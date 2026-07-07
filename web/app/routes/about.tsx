@@ -2,7 +2,7 @@ import type { Route } from "./+types/about";
 import { BaseHead } from "../components/BaseHead";
 import { Header } from "../components/SiteChrome";
 import { cacheHeaders } from "../lib/cache";
-import { getAbout, getSite } from "../lib/strapi";
+import { getAbout, getSite } from "../lib/prismic";
 
 export function headers() {
   return cacheHeaders();

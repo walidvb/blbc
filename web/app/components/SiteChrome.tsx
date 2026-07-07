@@ -1,5 +1,5 @@
-import type { Site } from "../lib/strapi";
-import { mediaUrl } from "../lib/strapi";
+import type { Site } from "../lib/prismic";
+import { mediaUrl } from "../lib/prismic";
 
 type HeaderProps = {
   site: Site | null;

@@ -1,0 +1,75 @@
+{
+  "id": "site",
+  "label": "Site",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo"
+        }
+      },
+      "contact": {
+        "type": "Text",
+        "config": {
+          "label": "Contact email"
+        }
+      },
+      "facebook_page": {
+        "type": "Link",
+        "config": {
+          "label": "Facebook page",
+          "allowTargetBlank": true
+        }
+      },
+      "instagram_page": {
+        "type": "Link",
+        "config": {
+          "label": "Instagram page",
+          "allowTargetBlank": true
+        }
+      },
+      "soundcloud_page": {
+        "type": "Link",
+        "config": {
+          "label": "SoundCloud page",
+          "allowTargetBlank": true
+        }
+      },
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "Page title"
+        }
+      },
+      "social_description": {
+        "type": "Text",
+        "config": {
+          "label": "Social description"
+        }
+      },
+      "social_image": {
+        "type": "Image",
+        "config": {
+          "label": "Social image"
+        }
+      },
+      "social_url": {
+        "type": "Link",
+        "config": {
+          "label": "Social URL",
+          "allowTargetBlank": true
+        }
+      },
+      "header_about": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Header about",
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      }
+    }
+  }
+}

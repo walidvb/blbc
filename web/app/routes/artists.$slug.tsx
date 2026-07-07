@@ -9,7 +9,7 @@ import {
   getArtistBySlug,
   getSite,
   mediaUrl,
-} from "../lib/strapi";
+} from '../lib/prismic'
 
 export function headers() {
   return cacheHeaders();
@@ -50,7 +50,7 @@ export const handle = { bodyClass: "long" };
 export default function ArtistPage({ loaderData }: Route.ComponentProps) {
   const { artist, site } = loaderData;
   const photoSrc = mediaUrl(artist.photoDetail, 1000);
-  const pressKitUrl = mediaUrl(artist.pressKit);
+  const pressKitUrl = artist.pressKit ?? null
   const social = artist.social;
 
   return (
@@ -67,7 +67,7 @@ export default function ArtistPage({ loaderData }: Route.ComponentProps) {
               <h1 className="hidden-xs artist-name">{artist.name}</h1>
               {artist.biography ? (
                 <div
-                  style={{ display: "contents" }}
+                  style={{ display: 'contents' }}
                   dangerouslySetInnerHTML={{ __html: artist.biography }}
                 />
               ) : null}
@@ -75,18 +75,23 @@ export default function ArtistPage({ loaderData }: Route.ComponentProps) {
                 <div className="press">
                   <div className="label mt-4">Press & Interviews</div>
                   <div
-                    style={{ display: "contents" }}
+                    style={{ display: 'contents' }}
                     dangerouslySetInnerHTML={{
                       __html: artist.pressAndInterviews,
                     }}
                   />
                 </div>
               ) : null}
-              {artist.mediaEmbed ? (
-                <div
-                  className="medias"
-                  dangerouslySetInnerHTML={{ __html: artist.mediaEmbed }}
-                />
+              {artist.media.length > 0 ? (
+                <div className="medias">
+                  {artist.media.map((embed, index) => (
+                    <div
+                      key={index}
+                      style={{ display: 'contents' }}
+                      dangerouslySetInnerHTML={{ __html: embed }}
+                    />
+                  ))}
+                </div>
               ) : null}
             </div>
             <div className="links">
@@ -110,7 +115,9 @@ export default function ArtistPage({ loaderData }: Route.ComponentProps) {
               ) : null}
               {pressKitUrl ? (
                 <div className="press-kit">
-                  <a href={pressKitUrl}>PRESS KIT</a>
+                  <a href={pressKitUrl} target="_blank">
+                    PRESS KIT
+                  </a>
                 </div>
               ) : null}
               <div className="label">Social</div>
@@ -193,13 +200,13 @@ export default function ArtistPage({ loaderData }: Route.ComponentProps) {
                 ) : null}
               </ul>
               <div className="press-kit">
-                <a href={bookingMailto(artist.name, artist.booker ?? "")}>
+                <a href={bookingMailto(artist.name, artist.booker ?? '')}>
                   BOOK {artist.name}
                 </a>
               </div>
               {artist.rssFeedUrl ? (
                 <div className="gigs-container">
-                  <div className="label" style={{ marginBottom: "1rem" }}>
+                  <div className="label" style={{ marginBottom: '1rem' }}>
                     Upcoming events
                   </div>
                   <RssFeed url={artist.rssFeedUrl} />
@@ -217,5 +224,5 @@ export default function ArtistPage({ loaderData }: Route.ComponentProps) {
       </main>
       <Footer />
     </>
-  );
+  )
 }
