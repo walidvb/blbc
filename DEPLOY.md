@@ -11,7 +11,7 @@ cp web/.env.example web/.env
 npm run push:types
 ```
 
-3. In Prismic: create and publish the **Site** and **About** singletons, then add **Artist** documents
+3. In Prismic: create and publish the **Site** singleton, then add **Artist** documents
 4. Settings → API & Security → create an access token if the API is private
 
 ## Web (Vercel)

@@ -37,13 +37,10 @@ export type Artist = {
   rssFeedUrl?: string | null;
 };
 
-export type About = {
-  content?: string | null;
-};
-
 export type Site = {
   logo?: ImageField | null;
   contact?: string | null;
+  content?: string | null;
   facebookPage?: string | null;
   instagramPage?: string | null;
   soundcloudPage?: string | null;
@@ -79,13 +76,10 @@ type ArtistDocument = prismic.PrismicDocumentWithUID<{
   instagram: LinkField;
 }>;
 
-type AboutDocument = prismic.PrismicDocument<{
-  content: RichTextField;
-}>;
-
 type SiteDocument = prismic.PrismicDocument<{
   logo: ImageField;
   contact: prismic.KeyTextField;
+  content: RichTextField;
   facebook_page: LinkField;
   instagram_page: LinkField;
   soundcloud_page: LinkField;
@@ -166,18 +160,13 @@ function mapArtist(doc: ArtistDocument): Artist {
   };
 }
 
-function mapAbout(doc: AboutDocument): About {
-  return {
-    content: richTextHtml(doc.data.content),
-  };
-}
-
 function mapSite(doc: SiteDocument): Site {
   const data = doc.data;
 
   return {
     logo: data.logo,
     contact: data.contact,
+    content: richTextHtml(data.content),
     facebookPage: linkUrl(data.facebook_page),
     instagramPage: linkUrl(data.instagram_page),
     soundcloudPage: linkUrl(data.soundcloud_page),
@@ -214,20 +203,6 @@ export async function getArtistBySlug(slug: string): Promise<Artist | null> {
   } catch (error) {
     if (error instanceof prismic.NotFoundError) return null;
     console.warn(`Prismic unavailable for artist ${slug}`, error);
-    return null;
-  }
-}
-
-export async function getAbout(): Promise<About | null> {
-  const prismicClient = getClient();
-  if (!prismicClient) return null;
-
-  try {
-    const doc = await prismicClient.getSingle("about");
-    return mapAbout(doc as AboutDocument);
-  } catch (error) {
-    if (error instanceof prismic.NotFoundError) return null;
-    console.warn("Prismic unavailable for about", error);
     return null;
   }
 }

@@ -2,15 +2,15 @@ import type { Route } from "./+types/about";
 import { BaseHead } from "../components/BaseHead";
 import { Header } from "../components/SiteChrome";
 import { cacheHeaders } from "../lib/cache";
-import { getAbout, getSite } from "../lib/prismic";
+import { getSite } from "../lib/prismic";
 
 export function headers() {
   return cacheHeaders();
 }
 
 export async function loader() {
-  const [about, site] = await Promise.all([getAbout(), getSite()]);
-  return { about, site };
+  const site = await getSite();
+  return { site };
 }
 
 export function meta({ loaderData }: Route.MetaArgs) {
@@ -18,15 +18,20 @@ export function meta({ loaderData }: Route.MetaArgs) {
   return [
     { title },
     ...(loaderData.site?.socialUrl
-      ? [{ property: "og:url", content: loaderData.site.socialUrl }]
+      ? [
+          {
+            property: 'og:url',
+            content: loaderData.site.socialUrl || process.env.NEXT_PUBLIC_URL,
+          },
+        ]
       : []),
-  ];
+  ]
 }
 
 export const handle = { bodyClass: "long" };
 
 export default function AboutPage({ loaderData }: Route.ComponentProps) {
-  const { about, site } = loaderData;
+  const { site } = loaderData;
 
   return (
     <>
@@ -34,10 +39,10 @@ export default function AboutPage({ loaderData }: Route.ComponentProps) {
       <Header site={site} />
       <main className="fade-up">
         <div className="body-container">
-          {about?.content ? (
+          {site?.content ? (
             <div
-              style={{ display: "contents" }}
-              dangerouslySetInnerHTML={{ __html: about.content }}
+              style={{ display: 'contents' }}
+              dangerouslySetInnerHTML={{ __html: site.content }}
             />
           ) : null}
         </div>
@@ -48,5 +53,5 @@ export default function AboutPage({ loaderData }: Route.ComponentProps) {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -17,6 +17,14 @@
           "label": "Contact email"
         }
       },
+      "content": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph, heading2, heading3, strong, em, hyperlink, image, embed, list-item, o-list-item",
+          "allowTargetBlank": true,
+          "label": "About"
+        }
+      },
       "facebook_page": {
         "type": "Link",
         "config": {
