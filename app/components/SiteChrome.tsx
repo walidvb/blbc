@@ -11,7 +11,7 @@ export function Header({ site }: HeaderProps) {
       <div className="logo">
         <a href="/">
           <img
-            src={site?.logo ? mediaUrl(site.logo, 300) : ""}
+            src={site?.logo ? mediaUrl(site.logo, 300) : '/logo.png'}
             className="logo"
           />
         </a>
@@ -54,16 +54,16 @@ export function Header({ site }: HeaderProps) {
             <a href="/about" className="visit-trigger">
               about
             </a>
-            <a href={`mailto:${site?.contact ?? ""}`}>contact</a>
+            <a href={`mailto:${site?.contact ?? ''}`}>contact</a>
           </div>
         </div>
       </div>
       {site?.headerAbout ? (
         <div
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
           dangerouslySetInnerHTML={{ __html: site.headerAbout }}
         />
       ) : null}
     </div>
-  );
+  )
 }

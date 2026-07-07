@@ -73,7 +73,7 @@ h1 {
     grid-template-columns: 1fr auto;
   }
   .slogan-hack {
-    transform: translateX(1.9rem);
+    transform: translateX(1rem);
   }
   .social.social--header {
     transform: translateX(calc(100% + 1rem));
