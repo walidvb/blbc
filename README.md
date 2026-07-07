@@ -1,40 +1,87 @@
-# BLBC
+# Welcome to React Router!
 
-Artist booking agency site, ported from Vapid to Prismic + React Router.
+A modern, production-ready template for building full-stack React applications using React Router.
 
-## Structure
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
-- `web/` — React Router frontend + Prismic custom types (deploys to Vercel)
-- `www/` — original Vapid site (source of truth for HTML, CSS, and JS)
+## Features
 
-The `web` app copies and compiles assets from `www` on every dev/build — no style or markup changes.
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
+- 📖 [React Router docs](https://reactrouter.com/)
 
-## Local development
+## Getting Started
+
+### Installation
+
+Install the dependencies:
 
 ```bash
-cp web/.env.example web/.env
-npm run push:types
-npm run dev:web
+npm install
+```
+web/DEPLOY.md
+### Development
+
+Start the development server with HMR:
+
+```bash
+npm run dev
 ```
 
-Frontend: http://localhost:5173
+Your application will be available at `http://localhost:5173`.
 
-Create a repo at [prismic.io](https://prismic.io), set `PRISMIC_REPOSITORY` in `web/.env`, generate a write token (`npx prismic token create --write`) for `push:types`, and add content in the writing room.
+## Building for Production
+
+Create a production build:
+
+```bash
+npm run build
+```
 
 ## Deployment
 
-See [DEPLOY.md](DEPLOY.md).
+### Docker Deployment
 
-- **CMS** → Prismic
-- **Web** → Vercel (`web/`, set `PRISMIC_REPOSITORY`)
-- **Rebuilds** → Prismic webhook → Vercel Deploy Hook
-
-## URLs
-
-Artist pages use `/artists/{slug}`.
-
-## Legacy Vapid site
+To build and run using Docker:
 
 ```bash
-npm start
+docker build -t my-app .
+
+# Run the container
+docker run -p 3000:3000 my-app
 ```
+
+The containerized application can be deployed to any platform that supports Docker, including:
+
+- AWS ECS
+- Google Cloud Run
+- Azure Container Apps
+- Digital Ocean App Platform
+- Fly.io
+- Railway
+
+### DIY Deployment
+
+If you're familiar with deploying Node applications, the built-in app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
+
+```
+├── package.json
+├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── build/
+│   ├── client/    # Static assets
+│   └── server/    # Server-side code
+```
+
+## Styling
+
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+---
+
+Built with ❤️ using React Router.

@@ -1,15 +1,7 @@
 .DS_Store
 .env
-data/
 node_modules
-package-lock.json
-*.png
-*.jpg
-*.jpeg
-*.svg
 
 # React Router
-web/build
-web/.react-router
-web/public/stylesheets
-web/public/javascripts
+/.react-router/
+/build/
