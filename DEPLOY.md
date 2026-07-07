@@ -1,31 +1,36 @@
 # Deployment
 
-## Strapi Cloud (CMS)
+## Prismic (CMS)
 
-1. Create a project at [cloud.strapi.io](https://cloud.strapi.io)
-2. Connect this repository and set the app directory to `cms/`
-3. Deploy — Strapi Cloud provides the database, media storage, and hosting
-4. In Strapi Cloud project settings, add environment variable:
-   - `CORS_ORIGIN=https://your-vercel-domain.vercel.app`
-Local Strapi config already sets public read permissions for Artist, About, and Site.
+1. Create a repository at [prismic.io](https://prismic.io)
+2. Push custom types from this repo:
+
+```bash
+cp web/.env.example web/.env
+# set PRISMIC_REPOSITORY and PRISMIC_WRITE_TOKEN (npx prismic token create --write)
+npm run push:types
+```
+
+3. In Prismic: create and publish the **Site** and **About** singletons, then add **Artist** documents
+4. Settings → API & Security → create an access token if the API is private
 
 ## Web (Vercel)
 
 1. Import the repository
 2. Set root directory to `web`
-3. Add environment variable:
-   - `STRAPI_URL=https://your-project.strapiapp.com` (from Strapi Cloud)
+3. Add environment variables:
+   - `PRISMIC_REPOSITORY` — your repo name (e.g. `blbc`)
+   - `PRISMIC_ACCESS_TOKEN` — optional, only if the API is not public
 4. Deploy
 
 `web/react-router.config.ts` pre-renders all routes at build time. `Cache-Control` headers enable CDN revalidation.
 
-Trigger a Vercel deploy after Strapi is populated so artist pages are included in the build.
+Trigger a Vercel deploy after artists are published so their pages are included in the build.
 
-## Strapi webhook → Vercel rebuild
+## Prismic webhook → Vercel rebuild
 
 1. In Vercel: Project Settings → Git → Deploy Hooks → create a hook
-2. In Strapi admin: Settings → Webhooks → create webhook
-   - URL: your Vercel deploy hook URL
-   - Events: `entry.publish`, `entry.unpublish`
+2. In Prismic: Settings → Webhooks → add your Vercel deploy hook URL
+   - Trigger on document publish and unpublish
 
-Add content manually in the Strapi admin, then trigger a Vercel deploy.
+Add content in the Prismic writing room, then trigger a Vercel deploy (or rely on the webhook).

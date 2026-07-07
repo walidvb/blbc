@@ -8,9 +8,6 @@ package-lock.json
 *.jpeg
 *.svg
 
-# Strapi
-cms
-
 # React Router
 web/build
 web/.react-router

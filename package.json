@@ -2,15 +2,13 @@
   "name": "blbc",
   "private": true,
   "workspaces": [
-    "cms",
     "web"
   ],
   "scripts": {
     "start": "vapid start .",
-    "dev:cms": "npm run develop --workspace cms",
     "dev:web": "npm run dev --workspace web",
-    "build:cms": "npm run build --workspace cms",
-    "build:web": "npm run build --workspace web"
+    "build:web": "npm run build --workspace web",
+    "push:types": "npm run push:types --workspace web"
   },
   "dependencies": {
     "rss-parser-browser": "^2.2.2"
