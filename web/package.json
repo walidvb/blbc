@@ -3,9 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-assets.mjs && react-router build",
-    "build:assets": "node scripts/build-assets.mjs",
-    "dev": "node scripts/build-assets.mjs && react-router dev",
+    "build": "react-router build",
+    "dev": "react-router dev",
     "push:types": "node scripts/push-types.mjs",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
