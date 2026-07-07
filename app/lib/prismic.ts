@@ -122,10 +122,17 @@ function mapMediaEmbeds(
 
   return items.flatMap((item) => {
     if (!prismic.isFilled.embed(item.media_embed) || !item.media_embed.html) {
-      return [];
+      return []
     }
-    return [item.media_embed.html];
-  });
+    if (/youtube/i.test(item.media_embed.html)) {
+      return [
+        item.media_embed.html
+          .replace(/width=\"\d+\"/, 'width="100%"')
+          .replace(/height=\"\d+\"/, 'height="320"'),
+      ]
+    }
+    return [item.media_embed.html]
+  })
 }
 
 function mapArtist(doc: ArtistDocument): Artist {
