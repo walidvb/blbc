@@ -11,7 +11,7 @@ export function Header({ site }: HeaderProps) {
       <div className="logo">
         <a href="/">
           <img
-            src={site?.logo ? mediaUrl(site.logo, 300) : '/logo.png'}
+            src={site?.logo ? mediaUrl(site.logo, 800) : '/logo.png'}
             className="logo"
           />
         </a>
