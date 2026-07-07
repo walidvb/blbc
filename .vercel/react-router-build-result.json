@@ -51,11 +51,17 @@
     }
   },
   "reactRouterConfig": {
-    "appDirectory": "/Users/gaston/dev/blbc/web/app",
+    "appDirectory": "/Users/gaston/dev/blbc/app",
     "basename": "/",
-    "buildDirectory": "/Users/gaston/dev/blbc/web/build",
+    "buildDirectory": "/Users/gaston/dev/blbc/build",
     "future": {
-      "unstable_optimizeDeps": false
+      "unstable_optimizeDeps": false,
+      "v8_passThroughRequests": false,
+      "v8_trailingSlashAwareDataRequests": false,
+      "unstable_previewServerPrerendering": false,
+      "v8_middleware": false,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
     },
     "routes": {
       "root": {
@@ -89,7 +95,6 @@
     "serverBuildFile": "index.js",
     "serverModuleFormat": "esm",
     "ssr": true,
-    "splitRouteModules": true,
     "subResourceIntegrity": false,
     "allowedActionOrigins": false,
     "unstable_routeConfig": [
