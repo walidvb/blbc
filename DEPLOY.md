@@ -17,7 +17,7 @@ npm run push:types
 ## Web (Vercel)
 
 1. Import the repository
-2. Set root directory to `web`
+2. Root directory should be `.` (repo root, not `web`)
 3. Add environment variables:
    - `PRISMIC_REPOSITORY` — your repo name (e.g. `blbc`)
    - `PRISMIC_ACCESS_TOKEN` — optional, only if the API is not public
