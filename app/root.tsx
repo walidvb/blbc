@@ -1,4 +1,3 @@
-import { useMatches } from "react-router";
 import {
   isRouteErrorResponse,
   Links,
@@ -6,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useMatches,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -25,6 +25,38 @@ export function Layout({ children }: { children: React.ReactNode }) {
       .reverse()
       .map((match) => (match.handle as RouteHandle | undefined)?.bodyClass)
       .find(Boolean) ?? "";
+
+  if (process.env.MAINTENANCE === "true") {
+    return (
+      <html>
+        <head>
+          <Meta />
+          <Links />
+        </head>
+        <body
+          style={{
+            margin: 0,
+            padding: 0,
+            minHeight: "100vh",
+            display: "grid",
+            placeItems: "center",
+            background: "#fff",
+          }}
+        >
+          <div style={{ textAlign: "center" }}>
+            <img
+              src="/logo.png"
+              alt="BLBC"
+              style={{ width: "min(480px, 80vw)", height: "auto" }}
+            />
+            <div>
+              <a href="mailto:juliette@blbcagency.com">contact</a>
+            </div>
+          </div>
+        </body>
+      </html>
+    );
+  }
 
   return (
     <html>
